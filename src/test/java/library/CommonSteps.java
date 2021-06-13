@@ -12,11 +12,15 @@ import java.util.List;
 import java.util.Properties;
 import java.util.Set;
 
+import javax.security.auth.login.Configuration;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 import io.cucumber.java.Before;
+import utilities.Configurations;
 
 public class CommonSteps {
 
@@ -38,7 +42,14 @@ public class CommonSteps {
 	}
 
 	public void Navigate(String URL) {
+		if(Configurations.BROWSER_NAME.equalsIgnoreCase("chrome"))
+		{
 		driver = new ChromeDriver();
+		}
+		else if(Configurations.BROWSER_NAME.equalsIgnoreCase("firefox")){
+			driver = new FirefoxDriver();
+		}
+		
 		driver.navigate().to(URL);
 		driver.manage().window().maximize();
 
