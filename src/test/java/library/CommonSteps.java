@@ -19,8 +19,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-import io.cucumber.java.Before;
 import utilities.Configurations;
+
 
 public class CommonSteps {
 
@@ -42,6 +42,7 @@ public class CommonSteps {
 	}
 
 	public void Navigate(String URL) {
+
 		if(Configurations.BROWSER_NAME.equalsIgnoreCase("chrome"))
 		{
 		driver = new ChromeDriver();
