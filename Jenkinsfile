@@ -8,7 +8,7 @@ stage("Maven Clean Compile"){
 
 	steps{
 			withMaven(maven: 'maven-3.8.1')
-				bat 'mvn clean compile'
+				sh 'mvn clean compile'
 	}
 
 }
@@ -16,7 +16,7 @@ stage("Maven Clean Compile"){
 stage("Maven Test"){
 		steps{
 					withMaven(maven: 'maven-3.8.1')
-						bat 'mvn test'
+						sh 'mvn test'
 			}
 }
 
